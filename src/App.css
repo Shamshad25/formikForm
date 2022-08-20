@@ -3,6 +3,11 @@
   box-sizing: border-box;
   background-color: rgb(235, 229, 221);
 }
+body,
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
 h3 {
   text-decoration: underline;
@@ -51,4 +56,11 @@ label {
   border-radius: 5px;
   color: #fff;
   background-color: rgb(25, 150, 14);
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
 }

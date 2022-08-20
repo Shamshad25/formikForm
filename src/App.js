@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Formik, Field, Form } from "formik";
-import DatePicker from "react-datepicker";
 import "./App.css";
 
 import "react-datepicker/dist/react-datepicker.css";
 
 const App = () => {
-  const [details, setDetails] = useState([]);
+  const [usersList, setUsersList] = useState([]);
 
   return (
     <>
@@ -35,8 +34,8 @@ const App = () => {
             nationality: "",
           }}
           onSubmit={(values) => {
-            console.log("This is submit", values);
-            setDetails(values);
+            console.log("This is submit", values, usersList);
+            setUsersList([values, ...usersList]);
             // await new Promise((r) => setTimeout(r, 500));
             // alert(JSON.stringify(values, null, 2));
           }}
@@ -386,16 +385,57 @@ const App = () => {
           </Form>
         </Formik>
       </div>
-      {details ? (
-        <div className="details">
-          {/* {details.map((data, i) => {
+      {usersList.length ? (
+        <table className="details">
+          <tr>
+            <th>Name </th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Mobile</th>
+            <th>Govt ID</th>
+            <th>Guardian</th>
+            <th>Email</th>
+            <th>Emergency Contact</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Pincode</th>
+            <th>Occupation</th>
+            <th>Religion</th>
+            <th>Marital Status</th>
+            <th>Blood Group</th>
+            <th>Nationality</th>
+          </tr>
+          {usersList.map((data, i) => {
             return (
-              <div key={i}>
-                <h4>{data.sex}</h4>
-              </div>
+              <tr key={i}>
+                <td>{data.firstName}</td>
+                <td>{data.dob}</td>
+                <td>{data.sex}</td>
+                <td>{data.mobile}</td>
+                <td>
+                  {data.gov} {data.govId}
+                </td>
+                <td>
+                  {data.guardian} {data.guardianName}
+                </td>
+                <td>{data.email}</td>
+                <td>{data.emergency}</td>
+                <td>{data.address}</td>
+                <td>{data.state}</td>
+                <td>{data.city}</td>
+                <td>{data.country}</td>
+                <td>{data.pincode}</td>
+                <td>{data.occupation}</td>
+                <td>{data.religion}</td>
+                <td>{data.marital}</td>
+                <td>{data.blood}</td>
+                <td>{data.nationality}</td>
+              </tr>
             );
-          })} */}
-        </div>
+          })}
+        </table>
       ) : null}
     </>
   );
