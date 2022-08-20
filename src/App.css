@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgb(235, 229, 221);
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+.container {
+  margin: 10px 10px;
+  border: 1px solid #000;
+  padding: 20px;
+}
+
+.section-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+label {
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+.btn-box {
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+}
+
+.btn-cancel {
+  margin: 10px;
+  border: 1px solid rgb(255, 59, 59);
+  padding: 10px 30px;
+  color: rgb(255, 59, 59);
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgb(235, 229, 221);
+}
+
+.btn-save {
+  margin: 10px;
+  border: none;
+  padding: 11px 37px;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(25, 150, 14);
+}
